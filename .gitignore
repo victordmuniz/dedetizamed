@@ -2,8 +2,9 @@
 .DS_Store
 Thumbs.db
 
-# Impeccable local/session-only config (never shared)
+# Impeccable local/session-only config (never shared) and QA screenshot captures
 .impeccable/config.local.json
+.impeccable/review/
 
 # Editor
 .vscode/

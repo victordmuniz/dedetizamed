@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none" aria-hidden="true">
+  <!-- Decorative motif echoing the staggered overlapping arcs of the dedetizamed
+       "dm" mark. Three offset partial rings, thick relative to radius like the
+       logo's own arcs. Colored via currentColor + two opacity steps so it can
+       sit on either a light or dark section. -->
+  <path
+    d="M 40 460 A 260 260 0 0 1 460 240"
+    stroke="currentColor"
+    stroke-width="46"
+    stroke-linecap="round"
+    opacity="1"
+  />
+  <path
+    d="M 130 520 A 320 320 0 0 1 560 300"
+    stroke="currentColor"
+    stroke-width="46"
+    stroke-linecap="round"
+    opacity="0.45"
+  />
+  <path
+    d="M 220 570 A 380 380 0 0 1 600 360"
+    stroke="currentColor"
+    stroke-width="46"
+    stroke-linecap="round"
+    opacity="0.2"
+  />
+</svg>

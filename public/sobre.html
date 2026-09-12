@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>dedetizamed — Controle de Pragas em Medianeira-PR</title>
+    <title>Sobre — dedetizamed</title>
     <meta
       name="description"
-      content="Dedetização, desratização, descupinização, controle de escorpiões e limpeza de caixa d'água em Medianeira-PR e região. +20 anos de experiência, licenciada, garantia de 3 meses. Fale no WhatsApp."
+      content="+20 anos de experiência em controle de pragas em Medianeira-PR. Empresa licenciada e registrada, com garantia de serviço."
     />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
@@ -17,6 +17,39 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/main.css" />
+    <style>
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: var(--space-4);
+        align-items: center;
+      }
+      @media (max-width: 55rem) {
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .legal-card {
+        background: var(--paper);
+        border-radius: var(--radius-lg);
+        padding: var(--space-3);
+        margin-top: var(--space-4);
+      }
+      .legal-card dl {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.4rem 1rem;
+        margin: 0;
+      }
+      .legal-card dt {
+        font-weight: 700;
+        color: var(--charcoal);
+      }
+      .legal-card dd {
+        margin: 0;
+        color: #555;
+      }
+    </style>
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -222,8 +255,8 @@
         </a>
         <nav class="site-nav" id="site-nav" data-nav data-open="false" aria-label="Navegação principal">
           <ul class="site-nav__links">
-            <li><a href="/" aria-current="page">Início</a></li>
-            <li><a href="/sobre.html">Sobre</a></li>
+            <li><a href="/">Início</a></li>
+            <li><a href="/sobre.html" aria-current="page">Sobre</a></li>
             <li><a href="/servicos.html">Serviços</a></li>
             <li><a href="/contato.html">Contato</a></li>
             <li class="site-nav__cta-item">
@@ -256,87 +289,57 @@
     </header>
 
     <main>
-      <section class="hero">
-        <svg class="hero__arc" viewBox="0 0 600 600" fill="none" aria-hidden="true">
-          <path
-            d="M 40 460 A 260 260 0 0 1 460 240"
-            stroke="currentColor"
-            stroke-width="46"
-            stroke-linecap="round"
-          />
-          <path
-            d="M 130 520 A 320 320 0 0 1 560 300"
-            stroke="currentColor"
-            stroke-width="46"
-            stroke-linecap="round"
-            opacity="0.45"
-          />
-          <path
-            d="M 220 570 A 380 380 0 0 1 600 360"
-            stroke="currentColor"
-            stroke-width="46"
-            stroke-linecap="round"
-            opacity="0.2"
-          />
-        </svg>
-        <div class="container hero__content">
-          <h1>Praga não espera. A gente também não.</h1>
-          <p>
-            Dedetização, desratização, descupinização, controle de escorpiões e
-            limpeza de caixa d'água em Medianeira e região — com licença,
-            garantia e atendimento que resolve de verdade.
-          </p>
-          <div class="hero__actions">
-            <a
-              class="btn btn-primary"
-              href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site"
-            >
-              <svg class="icon"><use href="#icon-whatsapp"></use></svg>
-              Falar no WhatsApp agora
-            </a>
-            <a class="btn btn-ghost" href="/servicos.html">Ver todos os serviços</a>
+      <section class="section">
+        <div class="container about-grid">
+          <div>
+            <h1>+20 anos cuidando do ambiente de quem confia na gente.</h1>
+            <p>
+              A dedetizamed atua em Medianeira e região há mais de 20 anos,
+              prestando serviços de controle de pragas para residências,
+              condomínios, indústrias e empresas que precisam manter a
+              conformidade sanitária em dia.
+            </p>
+            <p>
+              Somos uma empresa registrada e licenciada, com produtos seguros
+              para pessoas e animais de estimação, e garantia de 3 meses em
+              todo serviço prestado.
+            </p>
           </div>
-          <div class="cred-strip">
-            <span class="cred-strip__item">
-              <svg class="icon"><use href="#icon-shield"></use></svg>
-              Licenciada e registrada
-            </span>
-            <span class="cred-strip__item">
-              <svg class="icon"><use href="#icon-badge-star"></use></svg>
-              +20 anos de experiência
-            </span>
-            <span class="cred-strip__item">
-              <svg class="icon"><use href="#icon-shield-check"></use></svg>
-              Garantia de 3 meses
-            </span>
+          <div class="photo-placeholder">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <circle cx="9" cy="11" r="2" />
+              <path d="M21 16l-5-5-4 4-3-3-6 6" />
+            </svg>
+            <span>Foto da equipe em breve</span>
           </div>
         </div>
       </section>
 
       <section class="section section--paper">
         <div class="container">
-          <h2>Por que a dedetizamed</h2>
+          <h2>O que nos guia</h2>
           <div class="service-grid">
             <div class="service-card">
               <span class="icon-badge">
                 <svg class="icon"><use href="#icon-leaf"></use></svg>
               </span>
               <h3>Especialistas em controle ambiental</h3>
-              <p>Não é só dedetização — é manejo completo do ambiente onde a praga vive.</p>
+              <p>Manejo completo do ambiente, não só aplicação de produto.</p>
             </div>
             <div class="service-card">
               <span class="icon-badge icon-badge--yellow">
                 <svg class="icon"><use href="#icon-diagnostico"></use></svg>
               </span>
               <h3>Diagnóstico correto para cada praga</h3>
-              <p>Cada praga pede uma abordagem diferente — a gente identifica antes de agir.</p>
+              <p>Cada praga tem uma solução diferente — a gente identifica antes de agir.</p>
             </div>
             <div class="service-card">
               <span class="icon-badge">
                 <svg class="icon"><use href="#icon-seguro"></use></svg>
               </span>
               <h3>Métodos seguros para pessoas e pets</h3>
-              <p>Produtos que não colocam em risco crianças nem animais de estimação.</p>
+              <p>Produtos que não colocam em risco crianças nem animais.</p>
             </div>
             <div class="service-card">
               <span class="icon-badge icon-badge--yellow">
@@ -353,81 +356,17 @@
               <p>3 meses de garantia em todo serviço prestado.</p>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section class="section">
-        <div class="container">
-          <h2>Nossos serviços</h2>
-          <div class="service-grid">
-            <div class="service-card">
-              <span class="icon-badge">
-                <svg class="icon"><use href="#icon-barata"></use></svg>
-              </span>
-              <h3>Dedetização</h3>
-              <p>Baratas, formigas e outros insetos, na raiz do problema.</p>
-              <span class="service-card__tag">Residencial &amp; comercial</span>
-            </div>
-            <div class="service-card">
-              <span class="icon-badge icon-badge--yellow">
-                <svg class="icon"><use href="#icon-rato"></use></svg>
-              </span>
-              <h3>Desratização</h3>
-              <p>Controle de ratos e camundongos com segurança para o ambiente.</p>
-              <span class="service-card__tag">Residencial &amp; comercial</span>
-            </div>
-            <div class="service-card">
-              <span class="icon-badge">
-                <svg class="icon"><use href="#icon-cupim"></use></svg>
-              </span>
-              <h3>Descupinização</h3>
-              <p>Eliminação de cupim antes que o estrago fique maior.</p>
-              <span class="service-card__tag">Residencial &amp; comercial</span>
-            </div>
-            <div class="service-card">
-              <span class="icon-badge icon-badge--yellow">
-                <svg class="icon"><use href="#icon-escorpiao"></use></svg>
-              </span>
-              <h3>Controle de escorpiões</h3>
-              <p>Identificação de pontos de risco e controle da infestação.</p>
-              <span class="service-card__tag">Residencial &amp; comercial</span>
-            </div>
-            <div class="service-card">
-              <span class="icon-badge">
-                <svg class="icon"><use href="#icon-caixa-dagua"></use></svg>
-              </span>
-              <h3>Limpeza de caixa d'água</h3>
-              <p>Higienização completa da sua caixa d'água.</p>
-              <span class="service-card__tag">Exclusivo Medianeira</span>
-            </div>
-            <div class="service-card">
-              <span class="icon-badge icon-badge--yellow">
-                <svg class="icon"><use href="#icon-laudo"></use></svg>
-              </span>
-              <h3>Emissão de laudo técnico</h3>
-              <p>O documento que sua empresa precisa pra operar em conformidade.</p>
-              <span class="service-card__tag">Indústria, alimentação, saúde</span>
-            </div>
-          </div>
-
-          <div class="laudo-callout">
-            <svg class="laudo-callout__icon" style="color: var(--charcoal)">
-              <use href="#icon-laudo"></use>
-            </svg>
-            <div class="laudo-callout__body">
-              <h3>Sua empresa precisa de Laudo Técnico pra funcionar?</h3>
-              <p>
-                Atendemos indústria alimentícia, bares, restaurantes, clínicas e
-                farmácias — qualquer negócio que precise comprovar controle de
-                pragas em dia.
-              </p>
-            </div>
-            <a
-              class="btn btn-primary"
-              href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site"
-            >
-              Solicitar laudo
-            </a>
+          <div class="legal-card">
+            <h3>Dados da empresa</h3>
+            <dl>
+              <dt>Razão social</dt>
+              <dd>Antonio Clair Rodrigues Muniz Dedetização</dd>
+              <dt>CNPJ</dt>
+              <dd>04.946.748/0001-32</dd>
+              <dt>Endereço</dt>
+              <dd>Rua Rio Grande do Norte, 2371 — Cidade Alta, Medianeira-PR</dd>
+            </dl>
           </div>
         </div>
       </section>
@@ -435,7 +374,7 @@
       <section class="section section--charcoal">
         <div class="container">
           <div class="cta-band">
-            <h2>Fale agora com quem entende do assunto.</h2>
+            <h2>Quer saber se resolvemos o seu caso?</h2>
             <a
               class="btn btn-on-dark"
               href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site"
