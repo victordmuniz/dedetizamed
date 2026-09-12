@@ -1,0 +1,10 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Impeccable local/session-only config (never shared)
+.impeccable/config.local.json
+
+# Editor
+.vscode/
+.idea/
