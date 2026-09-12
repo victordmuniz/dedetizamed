@@ -1,32 +1,33 @@
 /* ============================================================
-   dedetizamed — design system
-   Direction: vibrant/commercial, committed full-palette color,
-   geometric rounded icons, arc motif echoing the "dm" logo.
+   dedetizamed — design system (v2, redesign)
+   Direction: confident/corporate, committed color (not full-palette),
+   near-black base, red spent deliberately, yellow as rare accent.
    See .impeccable/surfaces/site.md for the direction contract.
    ============================================================ */
 
 :root {
-  /* Brand palette. Red/yellow are FULL-STRENGTH brand colors — treat as
-     backgrounds, large surfaces and icon fills, never as small text on a
-     light ground (measured contrast below). */
-  --red: #ff0000; /* decorative fills, large surfaces, icons — NOT body text on white (4.0:1) */
-  --red-action: #e60000; /* buttons/links needing AA text contrast on white (4.81:1) */
+  /* Brand palette. Red/yellow are brand colors from the logo — spent
+     deliberately now, not smeared across every icon. Measured
+     contrast noted so nobody reintroduces an inaccessible pairing. */
+  --ink: #181818; /* near-black — hero and major dark sections */
+  --charcoal: #323232; /* secondary dark sections/text */
+  --red: #ff0000; /* accent shapes, large bold text/buttons — 4.0:1 on white, 4.4:1 on --ink: large text/bg only */
+  --red-action: #e60000; /* button backgrounds with white text — 4.81:1 white-on-red */
   --red-action-dark: #c40000; /* hover/active state for red buttons */
-  --yellow: #fff000; /* backgrounds/badges/icon accents ONLY — 1.19:1 on white, unusable as text */
-  --charcoal: #323232;
-  --charcoal-deep: #232323;
+  --yellow: #fff000; /* rare accent only: small badges/underlines on dark grounds (15:1 on --ink) — never as text on white/light, never a fill behind an icon */
   --white: #ffffff;
   --paper: #f6f6f6; /* soft off-white section alternation, not a brand color */
-  --ink-soft: #e9e9e9; /* body text on charcoal */
-  --ink-muted: #b9b9b9; /* secondary text on charcoal */
+  --ink-soft: #ececec; /* body text on --ink / --charcoal */
+  --ink-muted: #9c9c9c; /* secondary text on --ink / --charcoal — 5.2:1 */
   --border-soft: #e3e3e3;
+  --border-dark: rgba(255, 255, 255, 0.14);
 
-  --font-display: "Fredoka", "Baloo 2", system-ui, sans-serif;
-  --font-body: "Nunito Sans", "Nunito", -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Barlow Condensed", "Oswald", system-ui, sans-serif;
+  --font-body: "Karla", -apple-system, "Segoe UI", sans-serif;
 
-  --radius-sm: 10px;
-  --radius-md: 18px;
-  --radius-lg: 28px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
   --radius-pill: 999px;
 
   --space-1: 0.5rem;
@@ -34,11 +35,11 @@
   --space-3: 1.5rem;
   --space-4: 2.5rem;
   --space-5: 4rem;
-  --space-6: 6rem;
+  --space-6: 5.5rem;
 
   --container: 72rem;
-  --shadow-soft: 0 10px 30px rgba(50, 50, 50, 0.12);
-  --shadow-strong: 0 18px 40px rgba(0, 0, 0, 0.28);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.14);
+  --shadow-strong: 0 18px 40px rgba(0, 0, 0, 0.34);
 }
 
 *,
@@ -66,24 +67,27 @@ h2,
 h3,
 h4 {
   font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.12;
+  font-weight: 700;
+  line-height: 1.05;
   letter-spacing: -0.01em;
   margin: 0 0 var(--space-2);
-  color: var(--charcoal);
+  color: var(--ink);
 }
 
 h1 {
-  font-size: clamp(2.25rem, 5vw + 1rem, 3.75rem);
-  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw + 1rem, 4.5rem);
+  font-weight: 800;
+  text-transform: uppercase; /* short headline only — never a long h2/h3 sentence */
 }
 
 h2 {
-  font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+  font-size: clamp(1.85rem, 3.2vw + 1rem, 2.75rem);
 }
 
 h3 {
-  font-size: 1.375rem;
+  font-size: 1.3rem;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 p {
@@ -142,14 +146,42 @@ ul {
   padding-block: var(--space-4);
 }
 
+.section--dark {
+  background: var(--ink);
+  color: var(--ink-soft);
+}
+
 .section--charcoal {
   background: var(--charcoal);
   color: var(--ink-soft);
 }
 
+.section--dark h1,
+.section--dark h2,
+.section--dark h3,
 .section--charcoal h1,
 .section--charcoal h2,
 .section--charcoal h3 {
+  color: var(--white);
+}
+
+.section--dark a:not(.btn),
+.section--charcoal a:not(.btn) {
+  color: var(--yellow);
+}
+
+.section--red a:not(.btn) {
+  color: var(--white);
+}
+
+.section--red {
+  background: var(--red-action);
+  color: var(--white);
+}
+
+.section--red h1,
+.section--red h2,
+.section--red h3 {
   color: var(--white);
 }
 
@@ -157,8 +189,39 @@ ul {
   background: var(--paper);
 }
 
-.eyebrow-free-heading {
-  /* naming convention only: headings never get a kicker/eyebrow label above them */
+/* Note: no eyebrow/kicker component — a label riding above every heading is a
+   banned pattern (craft-floor), not a stylistic option. Headings carry their
+   own weight here. */
+
+/* ---------- Urgency bar ---------- */
+
+.urgency-bar {
+  background: var(--red-action);
+  color: var(--white);
+}
+
+.urgency-bar__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-block: 0.45rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.urgency-bar__row a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.urgency-bar .icon {
+  width: 1em;
+  height: 1em;
 }
 
 /* ---------- Buttons ---------- */
@@ -168,8 +231,10 @@ ul {
   align-items: center;
   gap: 0.6rem;
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 1rem;
   padding: 0.9rem 1.75rem;
   border-radius: var(--radius-pill);
   border: none;
@@ -199,23 +264,68 @@ ul {
 }
 
 .btn-on-dark {
-  background: var(--yellow);
-  color: var(--charcoal);
+  background: var(--white);
+  color: var(--ink);
 }
 
 .btn-on-dark:hover {
-  background: #ffffff;
+  background: var(--yellow);
 }
 
 .btn-ghost {
   background: transparent;
   color: var(--white);
-  border: 2px solid rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .btn-ghost:hover {
   border-color: var(--white);
   background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 0.9rem;
+  color: var(--red-action);
+  text-decoration: none;
+}
+
+.btn-text:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Floating WhatsApp button ---------- */
+
+.whatsapp-float {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  box-shadow: var(--shadow-strong);
+  transition: transform 0.15s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+}
+
+.whatsapp-float .icon {
+  width: 1.9rem;
+  height: 1.9rem;
 }
 
 /* ---------- Header ---------- */
@@ -257,8 +367,12 @@ ul {
 }
 
 .site-nav__links a:not(.btn) {
-  color: var(--charcoal);
-  font-weight: 600;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
   text-decoration: none;
   padding: 0.4rem 0.2rem;
   border-bottom: 3px solid transparent;
@@ -266,7 +380,7 @@ ul {
 
 .site-nav__links a:not(.btn):hover,
 .site-nav__links a:not(.btn)[aria-current="page"] {
-  border-bottom-color: var(--red);
+  border-bottom-color: var(--red-action);
   text-decoration: none;
 }
 
@@ -276,7 +390,7 @@ ul {
   border: none;
   cursor: pointer;
   padding: 0.5rem;
-  color: var(--charcoal);
+  color: var(--ink);
 }
 
 .site-nav__toggle .icon {
@@ -342,24 +456,25 @@ ul {
 .hero {
   position: relative;
   overflow: hidden;
-  background: var(--charcoal);
+  background: var(--ink);
   color: var(--white);
   padding-block: var(--space-6);
 }
 
 .hero__arc {
   position: absolute;
-  inset: auto -10% -30% auto;
-  width: 42rem;
-  max-width: 70vw;
+  inset: auto -8% -32% auto;
+  width: 46rem;
+  max-width: 75vw;
   height: auto;
   color: var(--red);
+  opacity: 0.5;
   pointer-events: none;
 }
 
 .hero__content {
   position: relative;
-  max-width: 44rem;
+  max-width: 46rem;
 }
 
 .hero h1 {
@@ -379,62 +494,161 @@ ul {
   margin-top: var(--space-3);
 }
 
-/* ---------- Credibility strip ---------- */
+/* ---------- Microproof row (compact icon + label, not badges) ---------- */
 
-.cred-strip {
+.proof-row {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3) var(--space-4);
   margin-top: var(--space-4);
   padding-top: var(--space-3);
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 1px solid var(--border-dark);
 }
 
-.cred-strip__item {
+.proof-row__item {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-weight: 600;
+  gap: 0.55rem;
+  font-weight: 700;
   color: var(--white);
+  font-size: 0.95rem;
 }
 
-.cred-strip__item .icon {
+.proof-row__item .icon {
   color: var(--yellow);
-  width: 1.4em;
-  height: 1.4em;
-}
-
-/* ---------- Icon badge ---------- */
-
-.icon-badge {
-  --icon-bg: var(--white);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: 50%;
-  background: var(--icon-bg);
-  color: var(--red);
+  width: 1.3em;
+  height: 1.3em;
   flex-shrink: 0;
 }
 
-.icon-badge .icon {
-  width: 2.5rem;
-  height: 2.5rem;
+/* ---------- Pain / dor real section ---------- */
+
+.pain-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0 0;
+  display: grid;
+  gap: 0.9rem;
 }
 
-.icon-badge--yellow {
-  --icon-bg: var(--yellow);
-  color: var(--charcoal);
+.pain-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 1.05rem;
 }
 
-.icon-badge--charcoal {
-  --icon-bg: var(--charcoal);
+.pain-list .icon {
+  color: var(--red-action);
+  width: 1.4em;
+  height: 1.4em;
+  margin-top: 0.15em;
+  flex-shrink: 0;
+}
+
+.pain-callout {
+  margin-top: var(--space-4);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--ink);
+}
+
+/* ---------- Diferenciais (compact icon chip rows, not big badges) ---------- */
+
+.chip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.chip-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.icon-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--red-action);
+  color: var(--red-action);
+  flex-shrink: 0;
+}
+
+.icon-chip .icon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.icon-chip--on-dark {
+  border-color: var(--yellow);
   color: var(--yellow);
 }
 
-/* ---------- Service cards ---------- */
+.chip-row h3 {
+  margin-bottom: 0.25rem;
+  font-size: 1.05rem;
+}
+
+.chip-row p {
+  font-size: 0.92rem;
+  color: #555;
+  margin: 0;
+}
+
+.section--dark .chip-row p,
+.section--charcoal .chip-row p {
+  color: var(--ink-muted);
+}
+
+/* ---------- Steps (como funciona) ---------- */
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  counter-reset: step;
+}
+
+.steps-grid > div {
+  position: relative;
+  padding-top: 0.25rem;
+}
+
+.steps-grid > div::before {
+  counter-increment: step;
+  content: counter(step);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: var(--space-1);
+  border-radius: 50%;
+  background: var(--red-action);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.steps-grid h3 {
+  font-size: 1.05rem;
+}
+
+.steps-grid p {
+  font-size: 0.92rem;
+  color: #555;
+}
+
+/* ---------- Service cards (icon + heading + desc + text link) ---------- */
 
 .service-grid {
   display: grid;
@@ -467,11 +681,16 @@ ul {
   align-self: flex-start;
   margin-top: auto;
   padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-sm);
   background: var(--paper);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  color: var(--charcoal);
+  color: var(--ink);
+}
+
+.service-card__link {
+  margin-top: auto;
+  padding-top: 0.5rem;
 }
 
 /* ---------- Laudo callout ---------- */
@@ -481,17 +700,18 @@ ul {
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-3);
-  background: var(--yellow);
-  color: var(--charcoal);
+  background: var(--ink);
+  color: var(--white);
   border-radius: var(--radius-lg);
   padding: var(--space-4);
   margin-top: var(--space-4);
 }
 
 .laudo-callout__icon {
-  width: 5rem;
-  height: 5rem;
+  width: 3.5rem;
+  height: 3.5rem;
   flex-shrink: 0;
+  color: var(--yellow);
 }
 
 .laudo-callout__body {
@@ -500,6 +720,93 @@ ul {
 
 .laudo-callout h3 {
   margin-bottom: 0.4rem;
+  color: var(--white);
+}
+
+.laudo-callout p {
+  color: var(--ink-muted);
+}
+
+/* ---------- Segments trust section (no fake logos/quotes) ---------- */
+
+.segment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1px;
+  margin-top: var(--space-4);
+  background: var(--border-soft);
+  border: 1px solid var(--border-soft);
+}
+
+.segment-grid__item {
+  background: var(--white);
+  padding: var(--space-3);
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 5.5rem;
+}
+
+/* ---------- Residencial x Empresa split ---------- */
+
+.split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 45rem) {
+  .split-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.split-card {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.split-card--dark {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.split-card--red {
+  background: var(--red-action);
+  color: var(--white);
+}
+
+.split-card h3 {
+  color: var(--white);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.split-card p {
+  color: var(--white); /* red-action bg needs solid white to clear 4.5:1 */
+}
+
+/* ---------- Guarantee band ---------- */
+
+.guarantee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.guarantee-grid .chip-row {
+  align-items: center;
 }
 
 /* ---------- Photo placeholder ---------- */
@@ -557,9 +864,36 @@ ul {
 /* ---------- Footer ---------- */
 
 .site-footer {
-  background: var(--charcoal-deep);
+  background: var(--ink);
   color: var(--ink-muted);
   padding-block: var(--space-4);
+}
+
+.site-footer__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.footer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.footer-badge .icon {
+  color: var(--yellow);
+  width: 1.1em;
+  height: 1.1em;
 }
 
 .site-footer__grid {
@@ -572,9 +906,10 @@ ul {
   /* Not a real heading: a footer sitemap label, kept out of the h1-h6
      outline on purpose so it never creates a skipped heading level. */
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
+  text-transform: uppercase;
   color: var(--white);
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin: 0 0 0.75rem;
 }
 
@@ -587,10 +922,19 @@ ul {
   color: var(--yellow);
 }
 
+.site-footer__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
 .site-footer__legal {
   margin-top: var(--space-3);
   padding-top: var(--space-3);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--border-dark);
   font-size: 0.85rem;
   display: flex;
   flex-wrap: wrap;
@@ -609,15 +953,6 @@ ul {
   color: var(--yellow);
   width: 1.3em;
   height: 1.3em;
-}
-
-.site-footer__nav-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
 }
 
 @media (max-width: 40rem) {
@@ -650,7 +985,7 @@ ul {
   justify-content: center;
 }
 
-.lp-hero .cred-strip {
+.lp-hero .proof-row {
   justify-content: center;
 }
 
@@ -675,6 +1010,16 @@ ul {
   margin: 0;
 }
 
+.lp-pest-grid .icon-chip {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.lp-pest-grid .icon-chip .icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
 .lp-pest-grid figcaption {
   font-weight: 700;
   font-size: 0.9rem;
@@ -684,35 +1029,6 @@ ul {
   text-align: center;
   max-width: 34rem;
   margin-inline: auto;
-}
-
-.lp-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  gap: var(--space-3);
-  margin-top: var(--space-4);
-  counter-reset: step;
-}
-
-.lp-steps > div {
-  text-align: center;
-}
-
-.lp-steps > div::before {
-  counter-increment: step;
-  content: counter(step);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  margin: 0 auto var(--space-1);
-  border-radius: 50%;
-  background: var(--red);
-  color: var(--white);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.1rem;
 }
 
 .lp-footer {

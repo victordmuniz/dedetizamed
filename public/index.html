@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Karla:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/main.css" />
@@ -199,6 +199,41 @@
     />
   </symbol>
 
+  <symbol id="icon-alert" viewBox="0 0 64 64">
+    <path d="M32,6 L60,54 H4 Z" fill="currentColor" />
+    <rect x="29" y="24" width="6" height="16" rx="3" fill="var(--icon-bg, #fff)" />
+    <circle cx="32" cy="46" r="3.5" fill="var(--icon-bg, #fff)" />
+  </symbol>
+
+  <symbol id="icon-arrow-right" viewBox="0 0 64 64">
+    <path
+      d="M8,32 H52 M36,16 L52,32 L36,48"
+      stroke="currentColor"
+      stroke-width="6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+  </symbol>
+
+  <symbol id="icon-home" viewBox="0 0 64 64">
+    <path d="M6,30 L32,8 L58,30" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M14,26 V56 H50 V26" fill="currentColor" />
+    <rect x="27" y="38" width="10" height="18" rx="1.5" fill="var(--icon-bg, #fff)" />
+  </symbol>
+
+  <symbol id="icon-building" viewBox="0 0 64 64">
+    <rect x="14" y="8" width="36" height="48" rx="2" fill="currentColor" />
+    <g fill="var(--icon-bg, #fff)">
+      <rect x="21" y="16" width="7" height="7" />
+      <rect x="36" y="16" width="7" height="7" />
+      <rect x="21" y="29" width="7" height="7" />
+      <rect x="36" y="29" width="7" height="7" />
+      <rect x="21" y="42" width="7" height="7" />
+      <rect x="36" y="42" width="7" height="7" />
+    </g>
+  </symbol>
+
   <symbol id="icon-whatsapp" viewBox="0 0 64 64">
     <path
       d="M32,8 C18,8 7,19 7,33 C7,38 8.5,42.5 11,46.5 L8,58 L20.5,55 C24.2,57 28,58 32,58 C46,58 57,47 57,33 C57,19 46,8 32,8 Z"
@@ -210,6 +245,14 @@
     />
   </symbol>
 </svg>
+
+    <div class="urgency-bar">
+      <div class="container urgency-bar__row">
+        <svg class="icon"><use href="#icon-whatsapp"></use></svg>
+        Atendimento imediato pelo
+        <a href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site">WhatsApp</a>
+      </div>
+    </div>
 
     <header class="site-header">
       <div class="container site-header__bar">
@@ -258,33 +301,16 @@
     <main>
       <section class="hero">
         <svg class="hero__arc" viewBox="0 0 600 600" fill="none" aria-hidden="true">
-          <path
-            d="M 40 460 A 260 260 0 0 1 460 240"
-            stroke="currentColor"
-            stroke-width="46"
-            stroke-linecap="round"
-          />
-          <path
-            d="M 130 520 A 320 320 0 0 1 560 300"
-            stroke="currentColor"
-            stroke-width="46"
-            stroke-linecap="round"
-            opacity="0.45"
-          />
-          <path
-            d="M 220 570 A 380 380 0 0 1 600 360"
-            stroke="currentColor"
-            stroke-width="46"
-            stroke-linecap="round"
-            opacity="0.2"
-          />
+          <path d="M 40 460 A 260 260 0 0 1 460 240" stroke="currentColor" stroke-width="46" stroke-linecap="round" />
+          <path d="M 130 520 A 320 320 0 0 1 560 300" stroke="currentColor" stroke-width="46" stroke-linecap="round" opacity="0.45" />
+          <path d="M 220 570 A 380 380 0 0 1 600 360" stroke="currentColor" stroke-width="46" stroke-linecap="round" opacity="0.2" />
         </svg>
         <div class="container hero__content">
-          <h1>Praga não espera. A gente também não.</h1>
+          <h1>Elimine pragas com segurança e garantia.</h1>
           <p>
-            Dedetização, desratização, descupinização, controle de escorpiões e
-            limpeza de caixa d'água em Medianeira e região — com licença,
-            garantia e atendimento que resolve de verdade.
+            Dedetização, desratização, descupinização e mais — diagnóstico
+            correto, produtos regulamentados e atendimento rápido em
+            Medianeira e região.
           </p>
           <div class="hero__actions">
             <a
@@ -292,65 +318,108 @@
               href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site"
             >
               <svg class="icon"><use href="#icon-whatsapp"></use></svg>
-              Falar no WhatsApp agora
+              Falar com especialista agora
             </a>
             <a class="btn btn-ghost" href="/servicos.html">Ver todos os serviços</a>
           </div>
-          <div class="cred-strip">
-            <span class="cred-strip__item">
-              <svg class="icon"><use href="#icon-shield"></use></svg>
-              Licenciada e registrada
-            </span>
-            <span class="cred-strip__item">
-              <svg class="icon"><use href="#icon-badge-star"></use></svg>
-              +20 anos de experiência
-            </span>
-            <span class="cred-strip__item">
+          <div class="proof-row">
+            <span class="proof-row__item">
               <svg class="icon"><use href="#icon-shield-check"></use></svg>
-              Garantia de 3 meses
+              Residencial e empresarial
+            </span>
+            <span class="proof-row__item">
+              <svg class="icon"><use href="#icon-badge-star"></use></svg>
+              Técnicos treinados
+            </span>
+            <span class="proof-row__item">
+              <svg class="icon"><use href="#icon-seguro"></use></svg>
+              Produtos seguros e regulamentados
+            </span>
+            <span class="proof-row__item">
+              <svg class="icon"><use href="#icon-shield"></use></svg>
+              Garantia no serviço
             </span>
           </div>
         </div>
       </section>
 
-      <section class="section section--paper">
+      <section class="section">
+        <div class="container" style="max-width: 46rem">
+          <h2>Pragas não aparecem por acaso — e não vão embora sozinhas</h2>
+          <ul class="pain-list">
+            <li>
+              <svg class="icon"><use href="#icon-alert"></use></svg>
+              Baratas, ratos e insetos se multiplicam rápido
+            </li>
+            <li>
+              <svg class="icon"><use href="#icon-alert"></use></svg>
+              Riscos à saúde da família ou dos clientes
+            </li>
+            <li>
+              <svg class="icon"><use href="#icon-alert"></use></svg>
+              Contaminação de alimentos e ambientes
+            </li>
+            <li>
+              <svg class="icon"><use href="#icon-alert"></use></svg>
+              Prejuízo à imagem do seu negócio
+            </li>
+            <li>
+              <svg class="icon"><use href="#icon-alert"></use></svg>
+              Soluções caseiras raramente resolvem de verdade
+            </li>
+          </ul>
+          <p class="pain-callout">Quanto mais você espera, maior o risco e o custo.</p>
+        </div>
+      </section>
+
+      <section class="section section--dark">
         <div class="container">
-          <h2>Por que a dedetizamed</h2>
-          <div class="service-grid">
-            <div class="service-card">
-              <span class="icon-badge">
+          <h2>Diagnóstico certo, execução sem improviso</h2>
+          <div class="chip-grid">
+            <div class="chip-row">
+              <span class="icon-chip icon-chip--on-dark">
                 <svg class="icon"><use href="#icon-leaf"></use></svg>
               </span>
-              <h3>Especialistas em controle ambiental</h3>
-              <p>Não é só dedetização — é manejo completo do ambiente onde a praga vive.</p>
+              <div>
+                <h3>Especialistas em controle ambiental</h3>
+                <p>Manejo completo do ambiente, não só aplicação de produto.</p>
+              </div>
             </div>
-            <div class="service-card">
-              <span class="icon-badge icon-badge--yellow">
+            <div class="chip-row">
+              <span class="icon-chip icon-chip--on-dark">
                 <svg class="icon"><use href="#icon-diagnostico"></use></svg>
               </span>
-              <h3>Diagnóstico correto para cada praga</h3>
-              <p>Cada praga pede uma abordagem diferente — a gente identifica antes de agir.</p>
+              <div>
+                <h3>Diagnóstico correto para cada praga</h3>
+                <p>Cada praga pede uma abordagem diferente — identificamos antes de agir.</p>
+              </div>
             </div>
-            <div class="service-card">
-              <span class="icon-badge">
+            <div class="chip-row">
+              <span class="icon-chip icon-chip--on-dark">
                 <svg class="icon"><use href="#icon-seguro"></use></svg>
               </span>
-              <h3>Métodos seguros para pessoas e pets</h3>
-              <p>Produtos que não colocam em risco crianças nem animais de estimação.</p>
+              <div>
+                <h3>Métodos seguros para pessoas e pets</h3>
+                <p>Produtos que não colocam em risco crianças nem animais.</p>
+              </div>
             </div>
-            <div class="service-card">
-              <span class="icon-badge icon-badge--yellow">
+            <div class="chip-row">
+              <span class="icon-chip icon-chip--on-dark">
                 <svg class="icon"><use href="#icon-atendimento"></use></svg>
               </span>
-              <h3>Atendimento rápido e organizado</h3>
-              <p>Do primeiro contato à execução, sem enrolação.</p>
+              <div>
+                <h3>Atendimento rápido e organizado</h3>
+                <p>Do primeiro contato à execução, sem enrolação.</p>
+              </div>
             </div>
-            <div class="service-card">
-              <span class="icon-badge">
+            <div class="chip-row">
+              <span class="icon-chip icon-chip--on-dark">
                 <svg class="icon"><use href="#icon-shield-check"></use></svg>
               </span>
-              <h3>Garantia de serviço</h3>
-              <p>3 meses de garantia em todo serviço prestado.</p>
+              <div>
+                <h3>Garantia de serviço</h3>
+                <p>3 meses de garantia em todo serviço prestado.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -358,60 +427,107 @@
 
       <section class="section">
         <div class="container">
-          <h2>Nossos serviços</h2>
+          <h2>Como funciona a dedetização com a dedetizamed</h2>
+          <div class="steps-grid">
+            <div>
+              <h3>Avaliação do ambiente</h3>
+              <p>Entendemos o problema antes de propor qualquer solução.</p>
+            </div>
+            <div>
+              <h3>Identificação da praga e do método</h3>
+              <p>Cada infestação tem um tratamento mais adequado.</p>
+            </div>
+            <div>
+              <h3>Aplicação segura e eficiente</h3>
+              <p>Produtos regulamentados, técnica correta.</p>
+            </div>
+            <div>
+              <h3>Orientações pós-serviço</h3>
+              <p>O que fazer (e evitar) depois da aplicação.</p>
+            </div>
+            <div>
+              <h3>Garantia e suporte</h3>
+              <p>3 meses de garantia, com suporte se precisar voltar.</p>
+            </div>
+          </div>
+          <p class="pain-callout" style="margin-top: var(--space-3)">Serviço profissional, sem improviso.</p>
+        </div>
+      </section>
+
+      <section class="section section--paper">
+        <div class="container">
+          <h2>Soluções para cada tipo de problema</h2>
           <div class="service-grid">
             <div class="service-card">
-              <span class="icon-badge">
+              <span class="icon-chip">
                 <svg class="icon"><use href="#icon-barata"></use></svg>
               </span>
-              <h3>Dedetização</h3>
+              <h3>Dedetização geral</h3>
               <p>Baratas, formigas e outros insetos, na raiz do problema.</p>
-              <span class="service-card__tag">Residencial &amp; comercial</span>
+              <a class="btn-text service-card__link" href="/servicos.html">
+                Saiba mais
+                <svg class="icon"><use href="#icon-arrow-right"></use></svg>
+              </a>
             </div>
             <div class="service-card">
-              <span class="icon-badge icon-badge--yellow">
+              <span class="icon-chip">
                 <svg class="icon"><use href="#icon-rato"></use></svg>
               </span>
-              <h3>Desratização</h3>
-              <p>Controle de ratos e camundongos com segurança para o ambiente.</p>
-              <span class="service-card__tag">Residencial &amp; comercial</span>
+              <h3>Controle de roedores</h3>
+              <p>Desratização com segurança para o ambiente e as pessoas.</p>
+              <a class="btn-text service-card__link" href="/servicos.html">
+                Saiba mais
+                <svg class="icon"><use href="#icon-arrow-right"></use></svg>
+              </a>
             </div>
             <div class="service-card">
-              <span class="icon-badge">
-                <svg class="icon"><use href="#icon-cupim"></use></svg>
-              </span>
-              <h3>Descupinização</h3>
-              <p>Eliminação de cupim antes que o estrago fique maior.</p>
-              <span class="service-card__tag">Residencial &amp; comercial</span>
-            </div>
-            <div class="service-card">
-              <span class="icon-badge icon-badge--yellow">
+              <span class="icon-chip">
                 <svg class="icon"><use href="#icon-escorpiao"></use></svg>
               </span>
-              <h3>Controle de escorpiões</h3>
-              <p>Identificação de pontos de risco e controle da infestação.</p>
-              <span class="service-card__tag">Residencial &amp; comercial</span>
+              <h3>Controle de insetos rasteiros</h3>
+              <p>Cupim e escorpiões, com identificação dos pontos de risco.</p>
+              <a class="btn-text service-card__link" href="/servicos.html">
+                Saiba mais
+                <svg class="icon"><use href="#icon-arrow-right"></use></svg>
+              </a>
             </div>
             <div class="service-card">
-              <span class="icon-badge">
+              <span class="icon-chip">
+                <svg class="icon"><use href="#icon-building"></use></svg>
+              </span>
+              <h3>Ambientes comerciais e empresariais</h3>
+              <p>Indústria alimentícia, bares, restaurantes, clínicas e farmácias.</p>
+              <a class="btn-text service-card__link" href="/servicos.html">
+                Saiba mais
+                <svg class="icon"><use href="#icon-arrow-right"></use></svg>
+              </a>
+            </div>
+            <div class="service-card">
+              <span class="icon-chip">
+                <svg class="icon"><use href="#icon-home"></use></svg>
+              </span>
+              <h3>Residencial</h3>
+              <p>Segurança para sua casa, sua família e seus pets.</p>
+              <a class="btn-text service-card__link" href="/servicos.html">
+                Saiba mais
+                <svg class="icon"><use href="#icon-arrow-right"></use></svg>
+              </a>
+            </div>
+            <div class="service-card">
+              <span class="icon-chip">
                 <svg class="icon"><use href="#icon-caixa-dagua"></use></svg>
               </span>
               <h3>Limpeza de caixa d'água</h3>
-              <p>Higienização completa da sua caixa d'água.</p>
-              <span class="service-card__tag">Exclusivo Medianeira</span>
-            </div>
-            <div class="service-card">
-              <span class="icon-badge icon-badge--yellow">
-                <svg class="icon"><use href="#icon-laudo"></use></svg>
-              </span>
-              <h3>Emissão de laudo técnico</h3>
-              <p>O documento que sua empresa precisa pra operar em conformidade.</p>
-              <span class="service-card__tag">Indústria, alimentação, saúde</span>
+              <p>Higienização completa — exclusivo da unidade de Medianeira.</p>
+              <a class="btn-text service-card__link" href="/servicos.html">
+                Saiba mais
+                <svg class="icon"><use href="#icon-arrow-right"></use></svg>
+              </a>
             </div>
           </div>
 
           <div class="laudo-callout">
-            <svg class="laudo-callout__icon" style="color: var(--charcoal)">
+            <svg class="laudo-callout__icon">
               <use href="#icon-laudo"></use>
             </svg>
             <div class="laudo-callout__body">
@@ -429,27 +545,128 @@
               Solicitar laudo
             </a>
           </div>
+
+          <div style="text-align: center; margin-top: var(--space-4)">
+            <a class="btn btn-primary" href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site">
+              <svg class="icon"><use href="#icon-whatsapp"></use></svg>
+              Solicitar avaliação agora
+            </a>
+          </div>
         </div>
       </section>
 
-      <section class="section section--charcoal">
+      <section class="section">
         <div class="container">
-          <div class="cta-band">
-            <h2>Fale agora com quem entende do assunto.</h2>
-            <a
-              class="btn btn-on-dark"
-              href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site"
-            >
-              <svg class="icon"><use href="#icon-whatsapp"></use></svg>
-              Falar no WhatsApp
-            </a>
+          <h2>Empresas e residências que confiam na dedetizamed</h2>
+          <p>Atuamos em diferentes segmentos, sempre com foco em segurança, conformidade e resultado.</p>
+          <div class="segment-grid">
+            <div class="segment-grid__item">Mercados e supermercados</div>
+            <div class="segment-grid__item">Farmácias e clínicas</div>
+            <div class="segment-grid__item">Condomínios</div>
+            <div class="segment-grid__item">Restaurantes e cozinhas industriais</div>
+            <div class="segment-grid__item">Residências</div>
           </div>
+          <p style="margin-top: var(--space-3); max-width: 60ch">
+            Cada ambiente exige um cuidado específico. Por isso, nossos serviços
+            são adaptados à realidade de cada cliente, respeitando as normas
+            sanitárias e garantindo eficiência no controle de pragas.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--paper">
+        <div class="container">
+          <div class="split-grid">
+            <div class="split-card split-card--dark">
+              <svg class="icon" style="width: 2.5rem; height: 2.5rem; color: var(--yellow)">
+                <use href="#icon-home"></use>
+              </svg>
+              <h3>Para residências</h3>
+              <p>Segurança para sua família, seus pets e o seu ambiente.</p>
+              <a class="btn btn-on-dark" href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site">
+                Quero atendimento
+              </a>
+            </div>
+            <div class="split-card split-card--red">
+              <svg class="icon" style="width: 2.5rem; height: 2.5rem; color: var(--white); --icon-bg: var(--red-action)">
+                <use href="#icon-building"></use>
+              </svg>
+              <h3>Para empresas</h3>
+              <p>Proteja sua operação, sua imagem e a conformidade sanitária.</p>
+              <a class="btn btn-on-dark" href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site">
+                Quero atendimento
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>Aqui o problema é tratado com responsabilidade</h2>
+          <div class="guarantee-grid">
+            <div class="chip-row">
+              <span class="icon-chip">
+                <svg class="icon"><use href="#icon-laudo"></use></svg>
+              </span>
+              <div><h3>Produtos regulamentados</h3></div>
+            </div>
+            <div class="chip-row">
+              <span class="icon-chip">
+                <svg class="icon"><use href="#icon-badge-star"></use></svg>
+              </span>
+              <div><h3>Técnicos capacitados</h3></div>
+            </div>
+            <div class="chip-row">
+              <span class="icon-chip">
+                <svg class="icon"><use href="#icon-shield-check"></use></svg>
+              </span>
+              <div><h3>Garantia no serviço</h3></div>
+            </div>
+            <div class="chip-row">
+              <span class="icon-chip">
+                <svg class="icon"><use href="#icon-atendimento"></use></svg>
+              </span>
+              <div><h3>Suporte pós-atendimento</h3></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--red">
+        <div class="container" style="text-align: center; max-width: 40rem">
+          <h2>Não espere o problema aumentar</h2>
+          <p style="margin-inline: auto">
+            Fale agora com a dedetizamed e tenha um ambiente seguro novamente.
+          </p>
+          <a
+            class="btn btn-on-dark"
+            href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site"
+            style="margin-top: var(--space-2)"
+          >
+            <svg class="icon"><use href="#icon-whatsapp"></use></svg>
+            Chamar no WhatsApp agora
+          </a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container">
+        <div class="site-footer__badges">
+          <span class="footer-badge">
+            <svg class="icon"><use href="#icon-shield"></use></svg>
+            Licenciada e registrada
+          </span>
+          <span class="footer-badge">
+            <svg class="icon"><use href="#icon-badge-star"></use></svg>
+            +20 anos de experiência
+          </span>
+          <span class="footer-badge">
+            <svg class="icon"><use href="#icon-shield-check"></use></svg>
+            Garantia de 3 meses
+          </span>
+        </div>
         <div class="site-footer__grid">
           <div>
             <p class="site-footer__heading">dedetizamed</p>
@@ -480,6 +697,14 @@
         </div>
       </div>
     </footer>
+
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site"
+      aria-label="Falar no WhatsApp"
+    >
+      <svg class="icon"><use href="#icon-whatsapp"></use></svg>
+    </a>
 
     <script src="/js/nav.js"></script>
     <script>

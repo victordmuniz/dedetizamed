@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Karla:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/main.css" />
@@ -244,6 +244,14 @@
   </symbol>
 </svg>
 
+    <div class="urgency-bar">
+      <div class="container urgency-bar__row">
+        <svg class="icon"><use href="#icon-whatsapp"></use></svg>
+        Atendimento imediato pelo
+        <a href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site">WhatsApp</a>
+      </div>
+    </div>
+
     <header class="site-header">
       <div class="container site-header__bar">
         <a href="/" aria-label="dedetizamed — página inicial">
@@ -316,47 +324,61 @@
         </div>
       </section>
 
-      <section class="section section--paper">
+      <section class="section section--dark">
         <div class="container">
-          <h2>O que nos guia</h2>
-          <div class="service-grid">
-            <div class="service-card">
-              <span class="icon-badge">
+          <h2>Diagnóstico certo, execução sem improviso</h2>
+          <div class="chip-grid">
+            <div class="chip-row">
+              <span class="icon-chip icon-chip--on-dark">
                 <svg class="icon"><use href="#icon-leaf"></use></svg>
               </span>
-              <h3>Especialistas em controle ambiental</h3>
-              <p>Manejo completo do ambiente, não só aplicação de produto.</p>
+              <div>
+                <h3>Especialistas em controle ambiental</h3>
+                <p>Manejo completo do ambiente, não só aplicação de produto.</p>
+              </div>
             </div>
-            <div class="service-card">
-              <span class="icon-badge icon-badge--yellow">
+            <div class="chip-row">
+              <span class="icon-chip icon-chip--on-dark">
                 <svg class="icon"><use href="#icon-diagnostico"></use></svg>
               </span>
-              <h3>Diagnóstico correto para cada praga</h3>
-              <p>Cada praga tem uma solução diferente — a gente identifica antes de agir.</p>
+              <div>
+                <h3>Diagnóstico correto para cada praga</h3>
+                <p>Cada praga tem uma solução diferente — identificamos antes de agir.</p>
+              </div>
             </div>
-            <div class="service-card">
-              <span class="icon-badge">
+            <div class="chip-row">
+              <span class="icon-chip icon-chip--on-dark">
                 <svg class="icon"><use href="#icon-seguro"></use></svg>
               </span>
-              <h3>Métodos seguros para pessoas e pets</h3>
-              <p>Produtos que não colocam em risco crianças nem animais.</p>
+              <div>
+                <h3>Métodos seguros para pessoas e pets</h3>
+                <p>Produtos que não colocam em risco crianças nem animais.</p>
+              </div>
             </div>
-            <div class="service-card">
-              <span class="icon-badge icon-badge--yellow">
+            <div class="chip-row">
+              <span class="icon-chip icon-chip--on-dark">
                 <svg class="icon"><use href="#icon-atendimento"></use></svg>
               </span>
-              <h3>Atendimento rápido e organizado</h3>
-              <p>Do primeiro contato à execução, sem enrolação.</p>
+              <div>
+                <h3>Atendimento rápido e organizado</h3>
+                <p>Do primeiro contato à execução, sem enrolação.</p>
+              </div>
             </div>
-            <div class="service-card">
-              <span class="icon-badge">
+            <div class="chip-row">
+              <span class="icon-chip icon-chip--on-dark">
                 <svg class="icon"><use href="#icon-shield-check"></use></svg>
               </span>
-              <h3>Garantia de serviço</h3>
-              <p>3 meses de garantia em todo serviço prestado.</p>
+              <div>
+                <h3>Garantia de serviço</h3>
+                <p>3 meses de garantia em todo serviço prestado.</p>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
 
+      <section class="section">
+        <div class="container">
           <div class="legal-card">
             <h3>Dados da empresa</h3>
             <dl>
@@ -371,9 +393,9 @@
         </div>
       </section>
 
-      <section class="section section--charcoal">
+      <section class="section section--red">
         <div class="container">
-          <div class="cta-band">
+          <div class="cta-band" style="background: transparent; padding: 0">
             <h2>Quer saber se resolvemos o seu caso?</h2>
             <a
               class="btn btn-on-dark"
@@ -389,6 +411,11 @@
 
     <footer class="site-footer">
       <div class="container">
+        <div class="site-footer__badges">
+          <span class="footer-badge">Licenciada e registrada</span>
+          <span class="footer-badge">+20 anos de experiência</span>
+          <span class="footer-badge">Garantia de 3 meses</span>
+        </div>
         <div class="site-footer__grid">
           <div>
             <p class="site-footer__heading">dedetizamed</p>
@@ -419,6 +446,14 @@
         </div>
       </div>
     </footer>
+
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site"
+      aria-label="Falar no WhatsApp"
+    >
+      <svg class="icon"><use href="#icon-whatsapp"></use></svg>
+    </a>
 
     <script src="/js/nav.js"></script>
     <script>
