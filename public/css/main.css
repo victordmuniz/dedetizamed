@@ -1,24 +1,24 @@
 /* ============================================================
-   dedetizamed — design system (v2, redesign)
-   Direction: confident/corporate, committed color (not full-palette),
-   near-black base, red spent deliberately, yellow as rare accent.
-   See .impeccable/surfaces/site.md for the direction contract.
+   dedetizamed — design system (v3, full rebuild)
+   Direction: confident/corporate, near-black base, red spent
+   deliberately, yellow as rare accent, real photography.
+   References: dedetizadoraberbert.com.br, vetpragas.com.br
+   (translated into dedetizamed's own red/yellow/charcoal brand —
+   no blue introduced, the logo has none).
    ============================================================ */
 
 :root {
-  /* Brand palette. Red/yellow are brand colors from the logo — spent
-     deliberately now, not smeared across every icon. Measured
-     contrast noted so nobody reintroduces an inaccessible pairing. */
-  --ink: #181818; /* near-black — hero and major dark sections */
-  --charcoal: #323232; /* secondary dark sections/text */
-  --red: #ff0000; /* accent shapes, large bold text/buttons — 4.0:1 on white, 4.4:1 on --ink: large text/bg only */
-  --red-action: #e60000; /* button backgrounds with white text — 4.81:1 white-on-red */
-  --red-action-dark: #c40000; /* hover/active state for red buttons */
-  --yellow: #fff000; /* rare accent only: small badges/underlines on dark grounds (15:1 on --ink) — never as text on white/light, never a fill behind an icon */
+  --ink: #161616; /* near-black — hero and major dark sections */
+  --ink-2: #232323; /* slightly lighter dark, for layered panels */
+  --charcoal: #323232;
+  --red: #ff0000; /* brand red — large surfaces, icon fills */
+  --red-action: #e60000; /* buttons/text needing AA on white — 4.81:1 */
+  --red-action-dark: #c40000;
+  --yellow: #fff000; /* rare accent on dark grounds only (15:1 on --ink) */
   --white: #ffffff;
-  --paper: #f6f6f6; /* soft off-white section alternation, not a brand color */
-  --ink-soft: #ececec; /* body text on --ink / --charcoal */
-  --ink-muted: #9c9c9c; /* secondary text on --ink / --charcoal — 5.2:1 */
+  --paper: #f6f6f6;
+  --ink-soft: #ececec;
+  --ink-muted: #9c9c9c;
   --border-soft: #e3e3e3;
   --border-dark: rgba(255, 255, 255, 0.14);
 
@@ -75,19 +75,17 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 6vw + 1rem, 4.5rem);
+  font-size: clamp(2.5rem, 6vw + 1rem, 4.25rem);
   font-weight: 800;
-  text-transform: uppercase; /* short headline only — never a long h2/h3 sentence */
+  text-transform: uppercase; /* short headline only, never a long h2/h3 sentence */
 }
 
 h2 {
-  font-size: clamp(1.85rem, 3.2vw + 1rem, 2.75rem);
+  font-size: clamp(1.85rem, 3.2vw + 1rem, 2.6rem);
 }
 
 h3 {
   font-size: 1.3rem;
-  text-transform: none;
-  letter-spacing: 0;
 }
 
 p {
@@ -151,27 +149,14 @@ ul {
   color: var(--ink-soft);
 }
 
-.section--charcoal {
-  background: var(--charcoal);
-  color: var(--ink-soft);
-}
-
 .section--dark h1,
 .section--dark h2,
-.section--dark h3,
-.section--charcoal h1,
-.section--charcoal h2,
-.section--charcoal h3 {
+.section--dark h3 {
   color: var(--white);
 }
 
-.section--dark a:not(.btn),
-.section--charcoal a:not(.btn) {
+.section--dark a:not(.btn) {
   color: var(--yellow);
-}
-
-.section--red a:not(.btn) {
-  color: var(--white);
 }
 
 .section--red {
@@ -185,13 +170,46 @@ ul {
   color: var(--white);
 }
 
+.section--red a:not(.btn) {
+  color: var(--white);
+}
+
 .section--paper {
   background: var(--paper);
 }
 
-/* Note: no eyebrow/kicker component — a label riding above every heading is a
-   banned pattern (craft-floor), not a stylistic option. Headings carry their
-   own weight here. */
+/* Two-tone heading: first line ink, second line red — the signature
+   heading treatment (structural styling, not a kicker/eyebrow label). */
+.heading-duo {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.98;
+  font-size: clamp(1.85rem, 3.4vw + 1rem, 2.75rem);
+}
+
+.heading-duo span {
+  display: block;
+}
+
+.heading-duo .line-1 {
+  color: var(--ink);
+}
+
+.heading-duo .line-2 {
+  color: var(--red-action);
+}
+
+.section--dark .heading-duo .line-1,
+.section--red .heading-duo .line-1 {
+  color: var(--white);
+}
+
+.section--dark .heading-duo .line-2,
+.section--red .heading-duo .line-2 {
+  color: var(--yellow);
+}
 
 /* ---------- Urgency bar ---------- */
 
@@ -461,6 +479,15 @@ ul {
   padding-block: var(--space-6);
 }
 
+.hero::before {
+  /* subtle diagonal panel, echoes the references' geometric hero cuts */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 55%, rgba(255, 255, 255, 0.035) 55%, rgba(255, 255, 255, 0.035) 78%, transparent 78%);
+  pointer-events: none;
+}
+
 .hero__arc {
   position: absolute;
   inset: auto -8% -32% auto;
@@ -468,13 +495,8 @@ ul {
   max-width: 75vw;
   height: auto;
   color: var(--red);
-  opacity: 0.5;
+  opacity: 0.45;
   pointer-events: none;
-}
-
-.hero__content {
-  position: relative;
-  max-width: 46rem;
 }
 
 .hero__grid {
@@ -483,6 +505,11 @@ ul {
   grid-template-columns: 1.1fr 0.9fr;
   gap: var(--space-4);
   align-items: center;
+}
+
+.hero__content {
+  position: relative;
+  max-width: 46rem;
 }
 
 .hero__photo {
@@ -528,7 +555,7 @@ ul {
   margin-top: var(--space-3);
 }
 
-/* ---------- Microproof row (compact icon + label, not badges) ---------- */
+/* ---------- Microproof row ---------- */
 
 .proof-row {
   display: flex;
@@ -588,7 +615,7 @@ ul {
   color: var(--ink);
 }
 
-/* ---------- Diferenciais (compact icon chip rows, not big badges) ---------- */
+/* ---------- Diferenciais (compact icon chip rows) ---------- */
 
 .chip-grid {
   display: grid;
@@ -636,9 +663,27 @@ ul {
   margin: 0;
 }
 
-.section--dark .chip-row p,
-.section--charcoal .chip-row p {
+.section--dark .chip-row p {
   color: var(--ink-muted);
+}
+
+/* ---------- Solid icon badge (service cards, richer weight) ---------- */
+
+.icon-badge-sq {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: var(--radius-md);
+  background: var(--ink);
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.icon-badge-sq .icon {
+  width: 1.6rem;
+  height: 1.6rem;
 }
 
 /* ---------- Steps (como funciona) ---------- */
@@ -682,7 +727,7 @@ ul {
   color: #555;
 }
 
-/* ---------- Service cards (icon + heading + desc + text link) ---------- */
+/* ---------- Service cards ---------- */
 
 .service-grid {
   display: grid;
@@ -727,6 +772,39 @@ ul {
   padding-top: 0.5rem;
 }
 
+/* ---------- Pest photo grid ("pragas que combatemos") ---------- */
+
+.pest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.pest-card {
+  text-align: center;
+}
+
+.pest-card__photo {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--red-action);
+  margin-bottom: var(--space-1);
+}
+
+.pest-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pest-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
 /* ---------- Laudo callout ---------- */
 
 .laudo-callout {
@@ -761,7 +839,7 @@ ul {
   color: var(--ink-muted);
 }
 
-/* ---------- Segments trust section (no fake logos/quotes) ---------- */
+/* ---------- Segments trust section ---------- */
 
 .segment-grid {
   display: grid;
@@ -827,7 +905,7 @@ ul {
 }
 
 .split-card p {
-  color: var(--white); /* red-action bg needs solid white to clear 4.5:1 */
+  color: var(--white);
 }
 
 /* ---------- Guarantee band ---------- */
@@ -843,37 +921,53 @@ ul {
   align-items: center;
 }
 
-/* ---------- Photo placeholder ---------- */
+/* ---------- FAQ accordion ---------- */
 
-.photo-placeholder {
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-lg);
-  background: repeating-linear-gradient(
-    135deg,
-    var(--paper),
-    var(--paper) 10px,
-    #eee 10px,
-    #eee 20px
-  );
+.faq-list {
+  margin-top: var(--space-4);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  background: var(--paper);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  color: #8a8a8a;
-  border: 1px dashed #cfcfcf;
-  text-align: center;
-  padding: var(--space-2);
-}
-
-.photo-placeholder .icon {
-  width: 2rem;
-  height: 2rem;
-}
-
-.photo-placeholder span {
-  font-size: 0.85rem;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  font-family: var(--font-display);
   font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary .icon {
+  color: var(--red-action);
+  width: 1.4rem;
+  height: 1.4rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary .icon {
+  transform: rotate(180deg);
+}
+
+.faq-item__body {
+  padding: 0 1.4rem 1.25rem;
+  color: #555;
 }
 
 /* ---------- CTA band ---------- */
@@ -1015,13 +1109,6 @@ ul {
   text-align: center;
 }
 
-.lp-hero--photo {
-  background-image: linear-gradient(rgba(24, 24, 24, 0.85), rgba(24, 24, 24, 0.92)),
-    url("/assets/photos/tecnico-aplicacao.jpg");
-  background-size: cover;
-  background-position: center 15%;
-}
-
 .lp-hero .hero__actions {
   justify-content: center;
 }
@@ -1034,42 +1121,21 @@ ul {
   display: none;
 }
 
-.lp-pest-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-  margin-top: var(--space-4);
-  text-align: center;
-}
-
-.lp-pest-grid figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  margin: 0;
-}
-
-.lp-pest-grid .icon-chip {
-  width: 3.5rem;
-  height: 3.5rem;
-}
-
-.lp-pest-grid .icon-chip .icon {
-  width: 1.75rem;
-  height: 1.75rem;
-}
-
-.lp-pest-grid figcaption {
-  font-weight: 700;
-  font-size: 0.9rem;
+.lp-hero--photo {
+  background-image: linear-gradient(rgba(22, 22, 22, 0.85), rgba(22, 22, 22, 0.92)),
+    url("/assets/photos/tecnico-aplicacao.jpg");
+  background-size: cover;
+  background-position: center 15%;
 }
 
 .lp-section-heading {
   text-align: center;
   max-width: 34rem;
   margin-inline: auto;
+}
+
+.lp-section-heading .heading-duo {
+  text-align: center;
 }
 
 .lp-footer {

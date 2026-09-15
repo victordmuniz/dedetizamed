@@ -40,206 +40,24 @@
       .contact-card__value {
         font-family: var(--font-display);
         font-size: 1.5rem;
-        font-weight: 600;
+        font-weight: 700;
       }
       .contact-card__value a {
-        color: var(--charcoal);
+        color: var(--ink);
         text-decoration: none;
       }
     </style>
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-  <!-- Shared icon sprite. Geometric, rounded, filled silhouettes with round-linecap
-       stroke accents for linear parts (legs, antennae, tails). Single-color via
-       currentColor; a couple of icons punch a background-colored line through a
-       solid shape via var(--icon-bg, transparent) for detail (paper lines, log holes). -->
-
-  <symbol id="icon-barata" viewBox="0 0 64 64">
-    <ellipse cx="32" cy="37" rx="12" ry="18" fill="currentColor" />
-    <circle cx="32" cy="16" r="7" fill="currentColor" />
-    <g stroke="currentColor" stroke-width="3.5" stroke-linecap="round" fill="none">
-      <path d="M21,26 Q10,23 6,29" />
-      <path d="M20,35 Q8,34 4,39" />
-      <path d="M21,44 Q10,47 6,53" />
-      <path d="M43,26 Q54,23 58,29" />
-      <path d="M44,35 Q56,34 60,39" />
-      <path d="M43,44 Q54,47 58,53" />
-      <path d="M28,10 Q22,2 16,4" />
-      <path d="M36,10 Q42,2 48,4" />
-    </g>
-  </symbol>
-
-  <symbol id="icon-rato" viewBox="0 0 64 64">
-    <path
-      d="M10,42 Q0,50 7,58 Q12,52 8,56"
-      stroke="currentColor"
-      stroke-width="4"
-      stroke-linecap="round"
-      fill="none"
-    />
-    <ellipse cx="30" cy="38" rx="17" ry="13" fill="currentColor" />
-    <circle cx="47" cy="29" r="9" fill="currentColor" />
-    <circle cx="43" cy="18" r="5.5" fill="currentColor" />
-    <circle cx="55" cy="30" r="3.5" fill="currentColor" />
-  </symbol>
-
-  <symbol id="icon-cupim" viewBox="0 0 64 64">
-    <path
-      d="M10,54 Q10,28 32,13 Q54,28 54,54 Z"
-      fill="currentColor"
-    />
-    <g stroke="var(--icon-bg, #fff)" stroke-width="3" fill="none">
-      <circle cx="26" cy="40" r="4" />
-      <circle cx="38" cy="34" r="3" />
-      <circle cx="30" cy="26" r="2.5" />
-    </g>
-  </symbol>
-
-  <symbol id="icon-escorpiao" viewBox="0 0 64 64">
-    <g stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none">
-      <path d="M18,46 L14,53" />
-      <path d="M25,48 L23,56" />
-      <path d="M33,46 L36,53" />
-    </g>
-    <ellipse cx="26" cy="40" rx="11" ry="7.5" fill="currentColor" />
-    <ellipse cx="14" cy="38" rx="6" ry="4.5" fill="currentColor" />
-    <circle cx="4" cy="32" r="4.5" fill="currentColor" />
-    <circle cx="6" cy="45" r="4.5" fill="currentColor" />
-    <path
-      d="M32,38 Q46,38 47,26 Q48,15 40,10"
-      stroke="currentColor"
-      stroke-width="5"
-      stroke-linecap="round"
-      fill="none"
-    />
-    <path d="M35,7 L44,6 L40,15 Z" fill="currentColor" />
-  </symbol>
-
-  <symbol id="icon-caixa-dagua" viewBox="0 0 64 64">
-    <ellipse cx="27" cy="21" rx="15" ry="5.5" fill="currentColor" />
-    <path
-      d="M12,21 L12,48 Q12,56 27,56 Q42,56 42,48 L42,21"
-      fill="currentColor"
-    />
-    <rect x="20" y="56" width="5" height="6" rx="1.5" fill="currentColor" />
-    <rect x="30" y="56" width="5" height="6" rx="1.5" fill="currentColor" />
-    <path
-      d="M50,30 Q57,38 50,45 Q43,38 50,30 Z"
-      fill="currentColor"
-    />
-  </symbol>
-
-  <symbol id="icon-laudo" viewBox="0 0 64 64">
-    <rect x="14" y="6" width="32" height="42" rx="5" fill="currentColor" />
-    <g stroke="var(--icon-bg, #fff)" stroke-width="3.5" stroke-linecap="round">
-      <path d="M21,18 H39" />
-      <path d="M21,26 H39" />
-      <path d="M21,34 H33" />
-    </g>
-    <circle cx="46" cy="46" r="10" fill="currentColor" />
-    <path d="M39,52 L34,63 L44,57 Z" fill="currentColor" />
-    <path d="M53,52 L58,63 L48,57 Z" fill="currentColor" />
-    <path
-      d="M41,46 L45,50 L52,42"
-      stroke="var(--icon-bg, #fff)"
-      stroke-width="3"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      fill="none"
-    />
-  </symbol>
-
-  <symbol id="icon-leaf" viewBox="0 0 64 64">
-    <path
-      d="M12,52 C10,30 24,10 52,10 C52,38 32,52 12,52 Z"
-      fill="currentColor"
-    />
-    <path
-      d="M14,50 C24,40 34,28 48,14"
-      stroke="var(--icon-bg, #fff)"
-      stroke-width="3.5"
-      stroke-linecap="round"
-      fill="none"
-    />
-  </symbol>
-
-  <symbol id="icon-diagnostico" viewBox="0 0 64 64">
-    <circle cx="27" cy="27" r="16" fill="none" stroke="currentColor" stroke-width="6" />
-    <path
-      d="M39,39 L54,54"
-      stroke="currentColor"
-      stroke-width="7"
-      stroke-linecap="round"
-    />
-  </symbol>
-
-  <symbol id="icon-seguro" viewBox="0 0 64 64">
-    <ellipse cx="32" cy="42" rx="16" ry="12" fill="currentColor" />
-    <circle cx="14" cy="26" r="7" fill="currentColor" />
-    <circle cx="27" cy="14" r="7" fill="currentColor" />
-    <circle cx="41" cy="14" r="7" fill="currentColor" />
-    <circle cx="52" cy="27" r="7" fill="currentColor" />
-  </symbol>
-
-  <symbol id="icon-atendimento" viewBox="0 0 64 64">
-    <rect x="26" y="4" width="12" height="6" rx="3" fill="currentColor" />
-    <circle cx="32" cy="36" r="22" fill="currentColor" />
-    <path
-      d="M32,36 L32,22 M32,36 L42,40"
-      stroke="var(--icon-bg, #fff)"
-      stroke-width="4"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      fill="none"
-    />
-  </symbol>
-
-  <symbol id="icon-shield" viewBox="0 0 64 64">
-    <path
-      d="M32,4 L54,13 V30 C54,45 45,55 32,60 C19,55 10,45 10,30 V13 Z"
-      fill="currentColor"
-    />
-  </symbol>
-
-  <symbol id="icon-shield-check" viewBox="0 0 64 64">
-    <path
-      d="M32,4 L54,13 V30 C54,45 45,55 32,60 C19,55 10,45 10,30 V13 Z"
-      fill="currentColor"
-    />
-    <path
-      d="M22,31 L29,38 L43,23"
-      stroke="var(--icon-bg, #fff)"
-      stroke-width="5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      fill="none"
-    />
-  </symbol>
-
-  <symbol id="icon-badge-star" viewBox="0 0 64 64">
-    <circle cx="32" cy="28" r="22" fill="currentColor" />
-    <path
-      d="M24,52 L20,62 L32,56 L44,62 L40,52"
-      fill="currentColor"
-    />
-    <path
-      d="M32,16 L35.5,24.5 L44.5,25.5 L37.5,31.5 L39.5,40.5 L32,35.5 L24.5,40.5 L26.5,31.5 L19.5,25.5 L28.5,24.5 Z"
-      fill="var(--icon-bg, #fff)"
-    />
-  </symbol>
-
-  <symbol id="icon-whatsapp" viewBox="0 0 64 64">
-    <path
-      d="M32,8 C18,8 7,19 7,33 C7,38 8.5,42.5 11,46.5 L8,58 L20.5,55 C24.2,57 28,58 32,58 C46,58 57,47 57,33 C57,19 46,8 32,8 Z"
-      fill="currentColor"
-    />
-    <path
-      d="M23,25 C23,23 25,21 27,22 C28,22.5 29,25 29,26.5 C29,27.5 28,28.5 28,29.5 C28,32 33,37 35.5,37 C36.5,37 37.5,36 38.5,36 C40,36 42.5,37 43,38 C44,40 42,42 40,42 C31,42 20,33 20,25"
-      fill="var(--icon-bg, #fff)"
-    />
-  </symbol>
-</svg>
+      <symbol id="icon-shield" viewBox="0 0 64 64">
+        <path d="M32,4 L54,13 V30 C54,45 45,55 32,60 C19,55 10,45 10,30 V13 Z" fill="currentColor" />
+      </symbol>
+      <symbol id="icon-whatsapp" viewBox="0 0 64 64">
+        <path d="M32,8 C18,8 7,19 7,33 C7,38 8.5,42.5 11,46.5 L8,58 L20.5,55 C24.2,57 28,58 32,58 C46,58 57,47 57,33 C57,19 46,8 32,8 Z" fill="currentColor" />
+        <path d="M23,25 C23,23 25,21 27,22 C28,22.5 29,25 29,26.5 C29,27.5 28,28.5 28,29.5 C28,32 33,37 35.5,37 C36.5,37 37.5,36 38.5,36 C40,36 42.5,37 43,38 C44,40 42,42 40,42 C31,42 20,33 20,25" fill="var(--icon-bg, #fff)" />
+      </symbol>
+    </svg>
 
     <div class="urgency-bar">
       <div class="container urgency-bar__row">
@@ -252,11 +70,7 @@
     <header class="site-header">
       <div class="container site-header__bar">
         <a href="/" aria-label="dedetizamed — página inicial">
-          <img
-            class="site-header__logo"
-            src="/assets/logo-full.png"
-            alt="dedetizamed — Soluções em Controle Ambiental"
-          />
+          <img class="site-header__logo" src="/assets/logo-full.png" alt="dedetizamed — Soluções em Controle Ambiental" />
         </a>
         <nav class="site-nav" id="site-nav" data-nav data-open="false" aria-label="Navegação principal">
           <ul class="site-nav__links">
@@ -271,21 +85,12 @@
               </a>
             </li>
           </ul>
-          <a
-            class="btn btn-primary site-nav__cta"
-            href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site"
-          >
+          <a class="btn btn-primary site-nav__cta" href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site">
             <svg class="icon"><use href="#icon-whatsapp"></use></svg>
             WhatsApp
           </a>
         </nav>
-        <button
-          class="site-nav__toggle"
-          data-nav-toggle
-          aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="Abrir menu"
-        >
+        <button class="site-nav__toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
             <path d="M4 7h16M4 12h16M4 17h16" />
           </svg>
@@ -301,34 +106,22 @@
 
           <div class="contact-grid" style="margin-top: var(--space-4)">
             <div class="contact-card">
-              <span class="icon-chip">
-                <svg class="icon"><use href="#icon-whatsapp"></use></svg>
-              </span>
+              <span class="icon-badge-sq"><svg class="icon"><use href="#icon-whatsapp"></use></svg></span>
               <h2>WhatsApp / Telefone</h2>
-              <p class="contact-card__value">
-                <a href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site">(45) 99810-2698</a>
-              </p>
-              <a
-                class="btn btn-primary"
-                href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site"
-              >
+              <p class="contact-card__value"><a href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site">(45) 99810-2698</a></p>
+              <a class="btn btn-primary" href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site">
                 <svg class="icon"><use href="#icon-whatsapp"></use></svg>
                 Chamar no WhatsApp
               </a>
             </div>
 
             <div class="contact-card">
-              <span class="icon-chip">
-                <svg class="icon"><use href="#icon-shield"></use></svg>
-              </span>
+              <span class="icon-badge-sq"><svg class="icon"><use href="#icon-shield"></use></svg></span>
               <h2>Matriz — Medianeira-PR</h2>
-              <p>
-                Rua Rio Grande do Norte, 2371<br />
-                Cidade Alta, Medianeira-PR
-              </p>
+              <p>Rua Rio Grande do Norte, 2371<br />Cidade Alta, Medianeira-PR</p>
               <a
                 class="btn btn-ghost"
-                style="color: var(--charcoal); border-color: var(--border-soft)"
+                style="color: var(--ink); border-color: var(--border-soft)"
                 href="https://www.google.com/maps/place/Dedetizamed+%2F+Controle+de+pragas+em+Medianeira+%2F+Limpeza+de+caixa+d'%C3%A1gua/data=!4m2!3m1!1s0x0:0xd1735f444ae3f373"
                 target="_blank"
                 rel="noopener"
@@ -355,10 +148,7 @@
           </div>
           <div>
             <p class="site-footer__heading">Contato</p>
-            <p class="site-footer__whatsapp">
-              <svg class="icon"><use href="#icon-whatsapp"></use></svg>
-              <a href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site">(45) 99810-2698</a>
-            </p>
+            <p class="site-footer__whatsapp"><svg class="icon"><use href="#icon-whatsapp"></use></svg><a href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site">(45) 99810-2698</a></p>
             <p>Rua Rio Grande do Norte, 2371<br />Cidade Alta, Medianeira-PR</p>
           </div>
           <div>
@@ -379,17 +169,11 @@
       </div>
     </footer>
 
-    <a
-      class="whatsapp-float"
-      href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site"
-      aria-label="Falar no WhatsApp"
-    >
+    <a class="whatsapp-float" href="https://wa.me/5545998102698?text=Ol%C3%A1%2C%20vim%20pelo%20site" aria-label="Falar no WhatsApp">
       <svg class="icon"><use href="#icon-whatsapp"></use></svg>
     </a>
 
     <script src="/js/nav.js"></script>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   </body>
 </html>
